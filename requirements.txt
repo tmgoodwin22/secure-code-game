@@ -4,3 +4,4 @@ flask
 flask-testing
 blinker
 requests
+aikido-zen==1.2.37

@@ -14,10 +14,15 @@
 # Run by opening a terminal and running the following:
 # $ export FLASK_APP=Season-2/Level-4/code.py && export FLASK_ENV=development && export FLASK_DEBUG=0 && flask run
 
+import aikido_zen
+aikido_zen.protect()
+
 import os
 import re
 from flask import Flask, request, render_template
+from aikido_zen.middleware import AikidoFlaskMiddleware
 app = Flask(__name__)
+app.wsgi_app = AikidoFlaskMiddleware(app.wsgi_app)
 
 # Set the absolute path to the template directory
 template_dir = os.path.abspath('Season-2/Level-4/templates')
